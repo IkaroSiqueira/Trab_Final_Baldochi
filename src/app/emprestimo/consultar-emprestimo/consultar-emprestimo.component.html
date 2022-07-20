@@ -1,0 +1,14 @@
+<form  [formGroup]="formEmprestimo" (ngSubmit)="onSubmit()">
+   
+      <div class="form-group">
+        <label for="nome">Codigo do Associado</label>
+        <input type="number" class="form-control" name="codigo_assoc" id="codigo_assoc" formControlName="codigo_assoc">
+      </div>
+  
+    <input type="submit" class="btn btn-primary mt-4" value="Salvar">
+    <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+  
+  </form>
+
+
+

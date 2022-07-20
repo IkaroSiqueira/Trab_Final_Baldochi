@@ -1,0 +1,30 @@
+<form  [formGroup]="formAssociado" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" formControlName="nome">
+    </div>
+  
+    <div class="form-group">
+      <label for="tipo">Status</label>
+      <select class="form-control" name="status" id="status" formControlName="status">
+        <option value="1">Grad</option>
+        <option value="2">Posgrad</option>
+        <option value="3">Prof</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+        <label for="nome">E-mail</label>
+        <input type="text" class="form-control" name="email" id="email" formControlName="email">
+      </div>
+
+      <div class="form-group">
+        <label for="nome">Endereço</label>
+        <input type="text" class="form-control" name="endereço" id="endereço" formControlName="endereço">
+      </div>
+  
+    <input type="submit" class="btn btn-primary mt-4" value="Salvar">
+    <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+  
+  </form>
