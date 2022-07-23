@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { LoginComponent } from './login/login.component';
 import { LoginFuncionarioComponent } from './login-funcionario/login-funcionario.component';
 import { FormularioComponent } from './funcionarios/formulario/formulario.component';
@@ -21,40 +23,31 @@ import { RetirarReservaComponent } from './reserva/retirar-reserva/retirar-reser
 import { ConsultarEmprestimoComponent } from './emprestimo/consultar-emprestimo/consultar-emprestimo.component';
 
 @NgModule({
+  declarations: [
+    AppComponent,
 
-    declarations: [
+    LoginComponent,
+    LoginFuncionarioComponent,
+    FormularioComponent,
+    FormularioComponentAssociado,
+    FormularioPublicacaoComponent,
+    FormularioExemplarComponent,
+    ConsultarPublicacaoComponent,
+    FormularioReservaComponent,
+    FormularioEmprestimoComponent,
+    RetirarReservaComponent,
+    ConsultarEmprestimoComponent,
+  ],
 
-        AppComponent,
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
 
-        LoginComponent,
-         LoginFuncionarioComponent,
-         FormularioComponent,
-         FormularioComponentAssociado,
-         FormularioPublicacaoComponent,
-         FormularioExemplarComponent,
-         ConsultarPublicacaoComponent,
-         FormularioReservaComponent,
-         FormularioEmprestimoComponent,
-         RetirarReservaComponent,
-         ConsultarEmprestimoComponent
+  providers: [],
 
-
-    ],
-
-    imports: [
-
-        BrowserModule,
-
-        AppRoutingModule,
-
-        ReactiveFormsModule
-
-    ],
-
-    providers: [],
-
-    bootstrap: [AppComponent]
-
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
