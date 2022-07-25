@@ -22,6 +22,8 @@ import { FormularioEmprestimoComponent } from './emprestimo/formulario-emprestim
 import { RetirarReservaComponent } from './reserva/retirar-reserva/retirar-reserva.component';
 import { ConsultarEmprestimoComponent } from './emprestimo/consultar-emprestimo/consultar-emprestimo.component';
 import { RouterModule } from '@angular/router';
+import { HomeAdmComponent } from './home-adm/home-adm.component';
+import { HomeCroComponent } from './home-cro/home-cro.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { RouterModule } from '@angular/router';
     FormularioEmprestimoComponent,
     RetirarReservaComponent,
     ConsultarEmprestimoComponent,
+    HomeAdmComponent,
+    HomeCroComponent,
   ],
 
   imports: [
@@ -45,19 +49,6 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: '', component: LoginComponent },
-      { path: '/loginfunc', component: LoginFuncionarioComponent },
-      { path: '/formfunc', component: FormularioComponent },
-      { path: '/formassoc', component: FormularioComponentAssociado },
-      { path: '/formpub', component: FormularioPublicacaoComponent },
-      { path: '/formexe', component: FormularioExemplarComponent },
-      { path: '/conspub', component: ConsultarPublicacaoComponent },
-      { path: '/formres', component: FormularioReservaComponent },
-      { path: '/formemp', component: FormularioEmprestimoComponent },
-      { path: '/retres', component: RetirarReservaComponent },
-      { path: 'consemp', component: ConsultarEmprestimoComponent },
-    ]),
   ],
 
   providers: [],

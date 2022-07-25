@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Publicacao } from '../shared/publicacao';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-consultar-publicacao',
   templateUrl: './consultar-publicacao.component.html',
@@ -9,7 +10,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ConsultarPublicacaoComponent implements OnInit {
   formPublicacao: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
     this.createForm(new Publicacao());
@@ -22,7 +27,7 @@ export class ConsultarPublicacaoComponent implements OnInit {
   onSubmit() {
     this.http
       .get<any>(
-        `https://biblioteca-back-end.herokuapp.com/publicacaos/${
+        `https://biblioteca-back-end.herokuapp.com/exemplars/consulta/${
           this.formPublicacao.get('isbn').value
         }`
       )

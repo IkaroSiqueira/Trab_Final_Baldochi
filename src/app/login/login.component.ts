@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Form, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
 
@@ -17,7 +18,11 @@ export class LoginComponent {
 
   mensagem: string;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) {
     this.criarForm();
   }
 
@@ -37,7 +42,7 @@ export class LoginComponent {
       .subscribe((data) => {
         this.mensagem = JSON.stringify(data);
       });
-
+    this.router.navigate(['homecro']);
     // if (
     //   this.form.get('email').value == this.emailDB &&
     //   this.form.get('senha').value == this.senhaDB

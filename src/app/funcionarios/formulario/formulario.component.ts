@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Funcionarios } from '../shared/funcionarios';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-formulario-funcionario',
   templateUrl: './formulario.component.html',
@@ -9,7 +11,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormularioComponent implements OnInit {
   formFuncionario: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
     this.createForm(new Funcionarios());

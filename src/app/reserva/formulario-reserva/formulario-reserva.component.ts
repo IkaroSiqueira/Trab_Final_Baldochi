@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Reserva } from '../shared/reserva';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-formulario-reserva',
   templateUrl: './formulario-reserva.component.html',
@@ -9,7 +11,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormularioReservaComponent implements OnInit {
   formReserva: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
     this.createForm(new Reserva());
@@ -19,8 +25,7 @@ export class FormularioReservaComponent implements OnInit {
       codigo: [reserva.codigo],
       isbn: [reserva.isbn],
       codigo_assoc: [reserva.codigo_assoc],
-      data: [reserva.data],
-      status: [reserva.status],
+      status: 'Iniciado',
     });
   }
   onSubmit() {
