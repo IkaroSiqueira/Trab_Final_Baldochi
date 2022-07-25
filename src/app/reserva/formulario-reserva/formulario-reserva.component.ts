@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import  {  FormBuilder,  FormGroup  }  from  '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Reserva } from '../shared/reserva';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-formulario-reserva',
   templateUrl: './formulario-reserva.component.html',
-  styleUrls: ['./formulario-reserva.component.css']
+  styleUrls: ['./formulario-reserva.component.css'],
 })
 export class FormularioReservaComponent implements OnInit {
   formReserva: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.createForm(new Reserva());
@@ -17,17 +17,24 @@ export class FormularioReservaComponent implements OnInit {
   createForm(reserva: Reserva) {
     this.formReserva = this.formBuilder.group({
       codigo: [reserva.codigo],
-      ISBN: [reserva.ISBN],
+      isbn: [reserva.isbn],
       codigo_assoc: [reserva.codigo_assoc],
       data: [reserva.data],
-      status: [reserva.status]
-    })
+      status: [reserva.status],
+    });
   }
   onSubmit() {
+    this.http
+      .post<any>(
+        'https://biblioteca-back-end.herokuapp.com/reservas',
+        this.formReserva.value
+      )
+      .subscribe((data) => {
+        console.log(data);
+      });
     // aqui você pode implementar a logica para fazer seu formulário salvar
     console.log(this.formReserva.value);
     // Usar o método reset para limpar os controles na tela
-    this.formReserva.reset(new  Reserva());
+    this.formReserva.reset(new Reserva());
   }
-
 }

@@ -1,12 +1,12 @@
-enum status{
-    "iniciado",
-    "avisado",
-    "anulado"
+enum status {
+  'iniciado',
+  'avisado',
+  'anulado',
 }
 export class Reserva {
-    codigo: number;
-    ISBN: string = '';
-    codigo_assoc: number;
-    data: Date;
-    status: status.iniciado;
+  codigo: number;
+  isbn: string = '';
+  codigo_assoc: number;
+  data: Date;
+  status: status.iniciado;
 }

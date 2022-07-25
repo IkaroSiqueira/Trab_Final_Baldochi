@@ -1,5 +1,5 @@
 export class Exemplar {
-    numero: string = '';
-    ISBN: string = '';
-    preço: number;
+  numero: number;
+  isbn: string = '';
+  preco: number;
 }

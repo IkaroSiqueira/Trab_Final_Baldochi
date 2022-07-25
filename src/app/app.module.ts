@@ -21,6 +21,7 @@ import { FormularioReservaComponent } from './reserva/formulario-reserva/formula
 import { FormularioEmprestimoComponent } from './emprestimo/formulario-emprestimo/formulario-emprestimo.component';
 import { RetirarReservaComponent } from './reserva/retirar-reserva/retirar-reserva.component';
 import { ConsultarEmprestimoComponent } from './emprestimo/consultar-emprestimo/consultar-emprestimo.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,19 @@ import { ConsultarEmprestimoComponent } from './emprestimo/consultar-emprestimo/
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', component: LoginComponent },
+      { path: '/loginfunc', component: LoginFuncionarioComponent },
+      { path: '/formfunc', component: FormularioComponent },
+      { path: '/formassoc', component: FormularioComponentAssociado },
+      { path: '/formpub', component: FormularioPublicacaoComponent },
+      { path: '/formexe', component: FormularioExemplarComponent },
+      { path: '/conspub', component: ConsultarPublicacaoComponent },
+      { path: '/formres', component: FormularioReservaComponent },
+      { path: '/formemp', component: FormularioEmprestimoComponent },
+      { path: '/retres', component: RetirarReservaComponent },
+      { path: 'consemp', component: ConsultarEmprestimoComponent },
+    ]),
   ],
 
   providers: [],

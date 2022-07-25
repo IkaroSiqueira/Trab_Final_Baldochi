@@ -1,10 +1,10 @@
-enum cargo{
-    "gerente",
-    "funcionario" 
+enum cargo {
+  'gerente',
+  'funcionario',
 }
 export class Funcionarios {
-
-        nome: string = '';
-        funcao: cargo.funcionario;
-        email: string = '';
+  nome: string = '';
+  funcao: cargo.funcionario;
+  email: string = '';
+  senha: string = '';
 }
