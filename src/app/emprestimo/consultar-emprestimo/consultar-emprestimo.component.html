@@ -5,6 +5,12 @@
     <input type="number" class="form-control" name="codigo_assoc" id="codigo_assoc" formControlName="codigo_assoc">
   </div>
 
-  <input type="submit" class="btn btn-primary mt-4" value="Salvar">
-
+  <input type="submit" class="btn btn-primary mt-4" value="Buscar">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let emprestimo of emprestimos">
+      <span>Emprestimo:</span>
+      <span>ISBN: {{emprestimo.isbn}}</span>
+      <span>data de devolução: {{emprestimo.data_devol}}</span>
+    </li>
+  </ul>
 </form>

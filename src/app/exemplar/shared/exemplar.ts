@@ -1,5 +1,5 @@
 export class Exemplar {
   numero: number;
-  isbn: string = '';
+  isbn: string;
   preco: number;
 }

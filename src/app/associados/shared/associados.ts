@@ -5,9 +5,9 @@ enum status {
 }
 
 export class Associados {
-  nome: string = '';
-  endereco: string = '';
-  email: string = '';
+  nome: string;
+  endereco: string;
+  email: string;
   status: status.grad;
-  senha: string = '';
+  senha: string;
 }

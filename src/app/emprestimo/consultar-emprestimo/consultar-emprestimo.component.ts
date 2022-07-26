@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./consultar-emprestimo.component.css'],
 })
 export class ConsultarEmprestimoComponent implements OnInit {
+  emprestimos;
   formEmprestimo: FormGroup;
   constructor(
     private router: Router,
@@ -26,6 +27,16 @@ export class ConsultarEmprestimoComponent implements OnInit {
     });
   }
   onSubmit() {
+    this.http
+      .get<any>(
+        `https://biblioteca-back-end.herokuapp.com/emprestimos/consulta/${
+          this.formEmprestimo.get('codigo_assoc').value
+        }`
+      )
+      .subscribe((data) => {
+        console.log(data);
+        this.emprestimos = data;
+      });
     // aqui você pode implementar a logica para fazer seu formulário salvar
     console.log(this.formEmprestimo.value);
     // Usar o método reset para limpar os controles na tela

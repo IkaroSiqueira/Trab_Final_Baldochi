@@ -5,7 +5,7 @@ enum status {
 }
 export class Reserva {
   codigo: number;
-  isbn: string = '';
+  isbn: string;
   codigo_assoc: number;
   data: Date;
   status: status.iniciado;
