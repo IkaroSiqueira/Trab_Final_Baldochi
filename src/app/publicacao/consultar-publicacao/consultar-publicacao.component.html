@@ -6,6 +6,13 @@
   </div>
 
   <input type="submit" class="btn btn-primary mt-4" value="Salvar">
-  <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let exemplar of exemplares">
+      <span>Exemplar:</span>
+      <span>Número: {{exemplar.numero}}</span>
+      <span>ISBN: {{exemplar.isbn}}</span>
+      <span>Preço: {{exemplar.preco}}R$</span>
+    </li>
+  </ul>
 
 </form>

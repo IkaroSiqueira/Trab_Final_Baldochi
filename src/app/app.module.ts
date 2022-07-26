@@ -24,6 +24,8 @@ import { ConsultarEmprestimoComponent } from './emprestimo/consultar-emprestimo/
 import { RouterModule } from '@angular/router';
 import { HomeAdmComponent } from './home-adm/home-adm.component';
 import { HomeCroComponent } from './home-cro/home-cro.component';
+import { DevolucaoEmprestimoComponent } from './emprestimo/devolucao-emprestimo/devolucao-emprestimo.component';
+import { RelatorioAtrasadosComponent } from './emprestimo/relatorio-atrasados/relatorio-atrasados.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { HomeCroComponent } from './home-cro/home-cro.component';
     ConsultarEmprestimoComponent,
     HomeAdmComponent,
     HomeCroComponent,
+    DevolucaoEmprestimoComponent,
+    RelatorioAtrasadosComponent,
   ],
 
   imports: [

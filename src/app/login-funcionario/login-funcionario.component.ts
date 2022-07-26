@@ -42,9 +42,9 @@ export class LoginFuncionarioComponent {
       )
       .subscribe((data) => {
         this.mensagem = JSON.stringify(data);
-        this.router.navigate(['homecro']);
+        this.router.navigate(['homeadm']);
       });
-    this.router.navigate(['homeadm']);
+
     // if (this.form.get('email').value == this.emailDB && this.form.get('senha').value == this.senhaDB)
     // {
     //     this.mensagem = "Login feito com sucesso!";

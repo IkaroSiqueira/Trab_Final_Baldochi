@@ -3,13 +3,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Emprestimo } from '../shared/emprestimo';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-formulario-emprestimo',
-  templateUrl: './formulario-emprestimo.component.html',
-  styleUrls: ['./formulario-emprestimo.component.css'],
+  selector: 'app-devolucao-emprestimo',
+  templateUrl: './devolucao-emprestimo.component.html',
+  styleUrls: ['./devolucao-emprestimo.component.css'],
 })
-export class FormularioEmprestimoComponent implements OnInit {
+export class DevolucaoEmprestimoComponent implements OnInit {
   formEmprestimo: FormGroup;
   constructor(
     private router: Router,
@@ -30,7 +29,7 @@ export class FormularioEmprestimoComponent implements OnInit {
   onSubmit() {
     this.http
       .post<any>(
-        'https://biblioteca-back-end.herokuapp.com/emprestimos',
+        'https://biblioteca-back-end.herokuapp.com/emprestimos/devolver',
         this.formEmprestimo.value
       )
       .subscribe((data) => {

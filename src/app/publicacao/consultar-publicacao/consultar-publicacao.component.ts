@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./consultar-publicacao.component.css'],
 })
 export class ConsultarPublicacaoComponent implements OnInit {
+  exemplares: any;
   formPublicacao: FormGroup;
   constructor(
     private router: Router,
@@ -33,6 +34,7 @@ export class ConsultarPublicacaoComponent implements OnInit {
       )
       .subscribe((data) => {
         console.log(data);
+        this.exemplares = data;
       });
     // aqui você pode implementar a logica para fazer seu formulário salvar
     console.log(this.formPublicacao.value);

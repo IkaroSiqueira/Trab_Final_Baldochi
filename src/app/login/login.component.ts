@@ -41,8 +41,9 @@ export class LoginComponent {
       })
       .subscribe((data) => {
         this.mensagem = JSON.stringify(data);
+        this.router.navigate(['homecro']);
       });
-    this.router.navigate(['homecro']);
+
     // if (
     //   this.form.get('email').value == this.emailDB &&
     //   this.form.get('senha').value == this.senhaDB

@@ -12,9 +12,10 @@ import { FormularioReservaComponent } from './reserva/formulario-reserva/formula
 import { FormularioEmprestimoComponent } from './emprestimo/formulario-emprestimo/formulario-emprestimo.component';
 import { RetirarReservaComponent } from './reserva/retirar-reserva/retirar-reserva.component';
 import { ConsultarEmprestimoComponent } from './emprestimo/consultar-emprestimo/consultar-emprestimo.component';
+import { DevolucaoEmprestimoComponent } from './emprestimo/devolucao-emprestimo/devolucao-emprestimo.component';
 import { HomeAdmComponent } from './home-adm/home-adm.component';
 import { HomeCroComponent } from './home-cro/home-cro.component';
-
+import { RelatorioAtrasadosComponent } from './emprestimo/relatorio-atrasados/relatorio-atrasados.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'homeadm', component: HomeAdmComponent },
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path: 'formemp', component: FormularioEmprestimoComponent },
   { path: 'retres', component: RetirarReservaComponent },
   { path: 'consemp', component: ConsultarEmprestimoComponent },
+  { path: 'devemp', component: DevolucaoEmprestimoComponent },
+  { path: 'relatr', component: RelatorioAtrasadosComponent },
 ];
 
 @NgModule({
